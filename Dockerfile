@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y \
     curl vim sudo gnupg2 ca-certificates lsb-release \
-    python3 python3-pip nodejs npm nginx apache2-utils \
+    python3 python3-pip nodejs npm nginx apache2-utils envsubst openssl \
     && curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/noble.noarmor.gpg | gpg --dearmor -o /usr/share/keyrings/tailscale-archive-keyring.gpg \
     && curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/noble.tailscale-keyring.list \
         | tee /etc/apt/sources.list.d/tailscale.list \
